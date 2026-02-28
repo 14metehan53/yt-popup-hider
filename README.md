@@ -2,12 +2,52 @@
 
 This snippet is designed for video pages (including YouTube-like players) where popups/modals/overlays interrupt playback. It **automatically hides intrusive overlay layers** and **attempts to resume playback** if the video gets paused due to those overlays.
 
+## Quick Usage (No Extensions Needed)
+
+### 1) Open the browser Console
+**Chrome / Edge (Windows / Linux)**
+1. Open the video page.
+2. Press **F12** (or **Ctrl + Shift + I**).
+3. Click the **Console** tab.
+
+**Chrome / Edge (macOS)**
+1. Open the video page.
+2. Press **⌥ Option + ⌘ Command + I**
+3. Click the **Console** tab.
+
+**Firefox**
+- Windows/Linux: **Ctrl + Shift + K**
+- macOS: **⌥ Option + ⌘ Command + K**
+
+> Tip: If you don’t see “Console”, look for a `>>` or “More tools” menu in DevTools.
+
+---
+
+### 2) Paste & run the snippet
+1. Copy the entire snippet code.
+2. Click inside the Console input area.
+3. Paste it (**Ctrl+V** / **⌘V**).
+4. Press **Enter** to run.
+
+If you did it correctly, you should see a log like:
+- `"[POPUP-HIDER] Active. Popup suppression + autoplay guard (manual pause respected)."`
+
+---
+
+### 3) How to stop it
+In the Console, run:
+
+`js
+window.__POPUP_HIDER__?.stop?.()
+
 Its core rule is non-negotiable:
 
 > **If the user manually pauses the video, the snippet will never force playback to resume.**  
 > Autoplay remains locked until the user explicitly plays again.
 
 It also ensures autoplay continues to work when the page transitions to a **new video** (e.g., next item in a playlist).
+
+Enjoy it :)
 
 ---
 
